@@ -110,4 +110,30 @@ export class OdooService {
 
     return of(res);
   }
+
+  // Obtenemos la lista de empleados de Odoo
+    getEmpleados = (): Observable<any> => {
+        // Construimos la url
+        const url = `${env.api}odoo/empleados`;
+
+        // Ralizamos la petición
+        return this.http.get(url).pipe(catchError(error => {
+            console.log(error.message);
+            // Si hay un error devolvemos un array vacío
+            return of({})
+        }));
+    }
+
+    // Obtenemos la lista de pedidos de Odoo
+    getPedidos = (): Observable<any> => {
+        // Construimos la url
+        const url = `${env.api}odoo/pedidos`;
+
+        // Ralizamos la petición
+        return this.http.get(url).pipe(catchError(error => {
+            console.log(error.message);
+            // Si hay un error devolvemos un array vacío
+            return of({})
+        }));
+    }
 }
