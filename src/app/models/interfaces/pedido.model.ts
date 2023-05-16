@@ -1,4 +1,4 @@
-export interface PedidoModel {
+export interface Pedido {
     id?: number,
     displayName: string,
     dateOrder: Date,
@@ -7,4 +7,6 @@ export interface PedidoModel {
     amountUntaxerd: number,
     amountTotal: number,
     taxGroupName: string,
+    deliveryStatus: string,
+    state?: string
 }
